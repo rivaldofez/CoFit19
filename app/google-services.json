@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "58566210011",
+    "firebase_url": "https://rifit19-c2c58.firebaseio.com",
+    "project_id": "rifit19-c2c58",
+    "storage_bucket": "rifit19-c2c58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58566210011:android:7ac68563139fe0023437fe",
+        "android_client_info": {
+          "package_name": "com.example.rifit19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58566210011-27hl09s7klbjkagcgdskignt0rsmgdtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq5i28tUGwIG641P7R7WutXfpL7Ll-mN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58566210011-27hl09s7klbjkagcgdskignt0rsmgdtv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
