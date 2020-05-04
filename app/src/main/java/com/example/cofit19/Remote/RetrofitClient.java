@@ -1,4 +1,4 @@
-package Remote;
+package com.example.cofit19.Remote;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

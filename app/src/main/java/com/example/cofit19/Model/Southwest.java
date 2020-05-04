@@ -1,7 +1,6 @@
-package Model;
+package com.example.cofit19.Model;
 
-public class Northeast {
-
+public class Southwest {
 
     private String lng;
 

@@ -1,7 +1,6 @@
-package Model;
+package com.example.cofit19.Model;
 
-public class Close {
-
+public class Open {
     private String time;
 
     private String day;

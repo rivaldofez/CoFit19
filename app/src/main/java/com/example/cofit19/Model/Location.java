@@ -1,6 +1,6 @@
-package Model;
+package com.example.cofit19.Model;
 
-public class Southwest {
+public class Location {
 
     private String lng;
 
@@ -31,4 +31,5 @@ public class Southwest {
     {
         return "ClassPojo [lng = "+lng+", lat = "+lat+"]";
     }
+
 }

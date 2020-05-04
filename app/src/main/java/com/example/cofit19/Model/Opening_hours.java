@@ -1,4 +1,4 @@
-package Model;
+package com.example.cofit19.Model;
 
 public class Opening_hours {
 

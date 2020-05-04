@@ -1,4 +1,4 @@
-package Model;
+package com.example.cofit19.Model;
 
 public class MyPlaces {
     private String next_page_token;

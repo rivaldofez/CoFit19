@@ -14,9 +14,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import Model.Photos;
-import Model.PlaceDetail;
-import Remote.IGoogleAPIService;
+import com.example.cofit19.Model.PlaceDetail;
+import com.example.cofit19.Remote.IGoogleAPIService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -26,7 +25,7 @@ public class ViewPlace extends AppCompatActivity {
     ImageView photo;
     RatingBar ratingBar;
     TextView opening_hours,place_address,place_name;
-    Button btnViewOnMap;
+    Button btnViewOnMap, btnViewDirections;
     IGoogleAPIService mService;
 
     PlaceDetail mPlace;
@@ -44,6 +43,7 @@ public class ViewPlace extends AppCompatActivity {
         place_name = (TextView) findViewById(R.id.place_name);
         opening_hours = (TextView) findViewById(R.id.place_open_hour);
         btnViewOnMap = (Button) findViewById(R.id.btn_show_map);
+        btnViewDirections = (Button) findViewById(R.id.btn_view_directions);
 
         //Empty All view
         place_name.setText("");
@@ -54,6 +54,14 @@ public class ViewPlace extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mPlace.getResult().getUrl()));
+                startActivity(mapIntent);
+            }
+        });
+
+        btnViewDirections.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mapIntent = new Intent(ViewPlace.this,ViewDirections.class);
                 startActivity(mapIntent);
             }
         });

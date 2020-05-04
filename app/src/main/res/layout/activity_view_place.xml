@@ -61,12 +61,18 @@
             android:text="Show On Map"
             style="@style/Widget.AppCompat.Button.Colored"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_view_directions"
+            android:text="View Directions"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+
 
 
         
         
     </LinearLayout>
-
 
     </LinearLayout>
 
