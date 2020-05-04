@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -51,6 +52,7 @@ public class Nearby extends FragmentActivity implements OnMapReadyCallback,
     private Marker mMarker;
     private LocationRequest mLocationRequest;
 
+    MyPlaces currentPlace;
     IGoogleAPIService mService;
 
 
@@ -107,6 +109,9 @@ public class Nearby extends FragmentActivity implements OnMapReadyCallback,
                 .enqueue(new Callback<MyPlaces>() {
                     @Override
                     public void onResponse(Call<MyPlaces> call, Response<MyPlaces> response) {
+
+                        currentPlace = response.body(); // Remember Assign Value For Current Place
+
                         if(response.isSuccessful()){
                             for(int i=0; i<response.body().getResults().length;i++){
                                 MarkerOptions markerOptions = new MarkerOptions();
@@ -129,6 +134,9 @@ public class Nearby extends FragmentActivity implements OnMapReadyCallback,
                                     markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_shop));
                                 else
                                     markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+
+                                //Assign index for marker
+                                markerOptions.snippet(String.valueOf(i));
 
                                 //Add Marker To Map
                                 mMap.addMarker(markerOptions);
@@ -208,6 +216,18 @@ public class Nearby extends FragmentActivity implements OnMapReadyCallback,
             buildGoogleApiClien();
             mMap.setMyLocationEnabled(true);
         }
+        //Make event click on Marker
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                //When user select marker, just get Result of place  and assign to static variable
+                Common.currentResult = currentPlace.getResults()[Integer.parseInt(marker.getSnippet())];
+
+                //Start Activity
+                startActivity(new Intent(Nearby.this,ViewPlace.class));
+                return true;
+            }
+        });
     }
 
     private synchronized void buildGoogleApiClien() {

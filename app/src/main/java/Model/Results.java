@@ -21,6 +21,10 @@ public class Results {
 
     private String place_id;
 
+    private String rating;
+
+    private Opening_hours opening_hours;
+
     public String getReference ()
     {
         return reference;
@@ -119,6 +123,22 @@ public class Results {
     public void setPlace_id (String place_id)
     {
         this.place_id = place_id;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public Opening_hours getOpening_hours() {
+        return opening_hours;
+    }
+
+    public void setOpening_hours(Opening_hours opening_hours) {
+        this.opening_hours = opening_hours;
     }
 
     @Override
