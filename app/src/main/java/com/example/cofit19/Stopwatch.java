@@ -34,10 +34,6 @@ public class Stopwatch extends AppCompatActivity {
 
         roundingalone = AnimationUtils.loadAnimation(this,R.anim.roundingalone);
 
-        Typeface MMedium = Typeface.createFromAsset(getAssets(),"fonts/MMedium.ttf");
-
-        btnstart.setTypeface(MMedium);
-
         btnstart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

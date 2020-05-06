@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1395ba"
+    android:background="@drawable/bglogin"
     tools:context="com.example.cofit19.Stopwatch">
 
     <ImageView
@@ -38,7 +38,8 @@
         android:id="@+id/timerhere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFF"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHighlight="@color/colorAccent"
         android:textSize="62sp"
         app:layout_constraintBottom_toTopOf="@+id/btnstart"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,39 +48,39 @@
         app:layout_constraintVertical_bias="0.060000002" />
 
     <Button
+        android:id="@+id/btnstart"
         android:layout_width="280dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Get Started"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/bg_button_accent"
+        android:fontFamily="sans-serif"
+        android:text="Start Exercise"
         android:textAllCaps="false"
-        android:textColor="#FFF"
         android:textSize="20sp"
-        android:id="@+id/btnstart"
-        android:src="@drawable/bgcircle"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnstop"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-    />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/btnstop"
         android:layout_width="280dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Finish Workout"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/bg_button_accent"
+        android:fontFamily="sans-serif"
+        android:text="Finish Exercise"
         android:textAllCaps="false"
-        android:textColor="#FFF"
         android:textSize="20sp"
-        android:id="@+id/btnstop"
-        android:src="@drawable/bgcircle"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
