@@ -240,8 +240,7 @@ public class ViewDirections extends FragmentActivity implements OnMapReadyCallba
                 }
 
                 polylineOptions.addAll(points);
-                polylineOptions.width(20);
-                polylineOptions.visible(true);
+                polylineOptions.width(10);
                 polylineOptions.color(Color.BLACK);
                 polylineOptions.geodesic(true);
             }
