@@ -71,10 +71,10 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Login.this ,"Login Successfully" , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this ,"Berhasil Masuk" , Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         }else{
-                            Toast.makeText(Login.this,"Error Occured !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this,"Terjadi Kesalahan ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
                         }
                     }
@@ -94,8 +94,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 final EditText resetmail = new EditText(v.getContext());
                 AlertDialog.Builder passwordresetdialog = new AlertDialog.Builder(v.getContext());
-                passwordresetdialog.setTitle("Reset Password ?");
-                passwordresetdialog.setMessage("Enter Your Email To Received Reset Link");
+                passwordresetdialog.setTitle("Reset Password");
+                passwordresetdialog.setMessage("Masukkan Email untuk menerima link reset password");
                 passwordresetdialog.setView(resetmail);
 
                 passwordresetdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -107,12 +107,12 @@ public class Login extends AppCompatActivity {
                         fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(Login.this,"Reset Link Sent To Your Email.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this,"Link reset password berhasil dikirim", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Login.this,"Error ! Reset Link is not Sent "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this,"Terjadi Kesalahan ! Reset Link is not Sent "+e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
                     }

@@ -9,59 +9,46 @@
             android:title="Home" />
 
         <item
-            android:id="@+id/nav_cycle"
+            android:id="@+id/nav_exercise"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home" />
+            android:title="Exercise" />
 
         <item
-            android:id="@+id/nav_bus"
+            android:id="@+id/nav_nearby"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home" />
+            android:title="Nearby" />
 
         <item
-            android:id="@+id/nav_plane"
+            android:id="@+id/nav_stopwatch"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home" />
+            android:title="Stopwatch" />
     </group>
 
-    <group android:checkableBehavior="single">
-
-        <item android:title="Profile">
-
+        <item android:title="Profil">
             <menu>
-
+                <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_login"
-                    android:icon="@drawable/ic_home_black_24dp"
-                    android:title="Login" />
-
-                <item
-                    android:id="@+id/nav_login"
-                    android:icon="@drawable/ic_home_black_24dp"
-                    android:title="Profile" />
-
-                <item
-                    android:id="@+id/nav_login"
+                    android:id="@+id/nav_logout"
                     android:icon="@drawable/ic_home_black_24dp"
                     android:title="Logout" />
-
+                </group>
             </menu>
 
         </item>
 
 
-    </group>
-
     <item android:title="Communicate">
         <menu>
+            <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_share"
-                android:title="Login"
+                android:title="Share"
                 android:icon="@drawable/ic_home_black_24dp"/>
             <item
                 android:id="@+id/nav_rate"
-                android:title="Login"
+                android:title="Go To Developer"
                 android:icon="@drawable/ic_home_black_24dp"/>
+            </group>
         </menu>
 
     </item>
