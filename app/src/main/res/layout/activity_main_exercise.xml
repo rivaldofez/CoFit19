@@ -1,9 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cofit19.MainExercise">
+    android:background="@drawable/bglogin"
+    tools:context="com.example.cofit19.MainExercise"
+    android:theme="@style/MyMaterialTheme">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/btnTraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/phone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btnExercise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_accent"
+                android:text="Exercise"
+                android:textColor="@color/colorAccent"
+                app:cornerRadius="2dp"
+                app:shadowColor="@color/colorAccent"
+                app:shadowEnabled="true"
+                app:shadowHeight="2dp" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btnSetting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:text="Setting"
+                android:textColor="@color/colorPrimaryDark"
+                app:cornerRadius="2dp"
+                app:shadowColor="@color/colorAccent"
+                app:shadowEnabled="true"
+                app:shadowHeight="2dp" />
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:id="@+id/btnCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
+            android:text="Calendar"
+            android:textColor="@color/colorAccent"
+            app:cornerRadius="2dp"
+            app:shadowColor="@color/colorAccent"
+            app:shadowEnabled="true"
+            app:shadowHeight="2dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -2,52 +2,68 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-
+        <item android:title="Menu">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_home_black_24dp"
+            android:icon="@drawable/home"
             android:title="Home" />
 
         <item
             android:id="@+id/nav_exercise"
-            android:icon="@drawable/ic_home_black_24dp"
+            android:icon="@drawable/exercise"
             android:title="Exercise" />
 
         <item
             android:id="@+id/nav_nearby"
-            android:icon="@drawable/ic_home_black_24dp"
+            android:icon="@drawable/nearby"
             android:title="Nearby" />
 
         <item
             android:id="@+id/nav_stopwatch"
-            android:icon="@drawable/ic_home_black_24dp"
+            android:icon="@drawable/stopwatchs"
             android:title="Stopwatch" />
+        </item>
     </group>
 
-        <item android:title="Profil">
-            <menu>
-                <group android:checkableBehavior="single">
+    <item android:title="Profil">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_profil"
+                    android:icon="@drawable/profile"
+                    />
+
+                <item
+                    android:id="@+id/nav_email"
+                    android:icon="@drawable/email"
+                    />
+
+                <item
+                    android:id="@+id/nav_phone"
+                    android:icon="@drawable/phone"
+                    />
+
                 <item
                     android:id="@+id/nav_logout"
-                    android:icon="@drawable/ic_home_black_24dp"
+                    android:icon="@drawable/logout"
                     android:title="Logout" />
-                </group>
-            </menu>
+            </group>
+        </menu>
 
-        </item>
-
+    </item>
 
     <item android:title="Communicate">
         <menu>
             <group android:checkableBehavior="single">
-            <item
-                android:id="@+id/nav_share"
-                android:title="Share"
-                android:icon="@drawable/ic_home_black_24dp"/>
-            <item
-                android:id="@+id/nav_rate"
-                android:title="Go To Developer"
-                android:icon="@drawable/ic_home_black_24dp"/>
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/share"
+                    android:title="Share" />
+                <item
+                    android:id="@+id/nav_rate"
+                    android:icon="@drawable/developer"
+                    android:title="Go To Developer" />
             </group>
         </menu>
 
