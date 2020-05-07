@@ -1,6 +1,7 @@
 package com.example.cofit19.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cofit19.Interface.ItemClickListener;
 import com.example.cofit19.Model.Exercise;
 import com.example.cofit19.R;
+import com.example.cofit19.ViewExercise;
 
 import org.w3c.dom.Text;
 
@@ -72,7 +74,11 @@ public class RecyclerViewAdapter  extends RecyclerView.Adapter<RecyclerViewHolde
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(context,"Click to "+exerciseList.get(position).getName(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ViewExercise.class);
+                intent.putExtra("image_id",exerciseList.get(position).getImage_id());
+                intent.putExtra("name",exerciseList.get(position).getName());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
             }
         });
     }

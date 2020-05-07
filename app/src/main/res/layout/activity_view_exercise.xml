@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cofit19.ViewExercise">
+    tools:context="com.example.cofit19.ListExercise"
+    android:theme="@style/MyMaterialTheme">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/title"
+        android:text="Name of Exercise"
+        android:textColor="@color/font_black"
+        android:textSize="24sp"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <ImageView
+        android:layout_width="360dp"
+        android:src="@drawable/cofitsplash"
+        android:layout_height="200dp"
+        android:id="@+id/detail_image"
+        android:layout_centerInParent="true"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/btnStart_ex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="4dp"
+        android:textAlignment="center"
+        android:text="START"
+        android:textColor="@color/colorAccent"
+        app:cornerRadius="2dp"
+        app:shadowColor="@color/colorAccent"
+        app:shadowEnabled="true"
+        app:shadowHeight="2dp" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:text="20"
+        android:textStyle="bold"
+        android:textColor="@color/font_black"
+        android:textSize="50sp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btnStart_ex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
