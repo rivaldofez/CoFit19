@@ -25,7 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingPage"></activity>
+        <activity android:name=".Daily_Training"></activity>
+        <activity android:name=".SettingPage" />
         <activity android:name=".ViewExercise" />
         <activity android:name=".ListExercise" />
         <!--
@@ -43,8 +44,6 @@
         <activity android:name=".MainExercise">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Splash">
@@ -96,6 +95,8 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".AlarmNotificationReceiver" />
 
         <meta-data
             android:name="preloaded_fonts"

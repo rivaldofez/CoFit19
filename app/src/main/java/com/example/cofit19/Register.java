@@ -53,7 +53,7 @@ public class Register extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            startActivity(new Intent(getApplicationContext(),MainExercise.class));
             finish();
         }
 
@@ -94,6 +94,7 @@ public class Register extends AppCompatActivity {
                             user.put("fname",fullName);
                             user.put("email",email);
                             user.put("phone",phone);
+                            user.put("mode","1");
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -101,7 +102,7 @@ public class Register extends AppCompatActivity {
                                 }
                             });
 
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(),MainExercise.class));
                         }else{
                             Toast.makeText(Register.this,"Error Occured !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);

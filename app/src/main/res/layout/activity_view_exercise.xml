@@ -41,6 +41,17 @@
         app:shadowHeight="2dp" />
 
     <TextView
+        android:id="@+id/type"
+        android:text="Kategori"
+        android:textStyle="bold"
+        android:textColor="@color/font_black"
+        android:textSize="50sp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
         android:id="@+id/timer"
         android:text="20"
         android:textStyle="bold"
