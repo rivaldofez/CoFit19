@@ -31,6 +31,7 @@ public class ViewExercise extends AppCompatActivity {
     ImageView detail_image;
     Button btnstart_ex;
     ExerciseDB exerciseDB;
+
     FirebaseAuth fAuth;
     FirebaseFirestore fStore ;
     String userID ;
@@ -48,8 +49,8 @@ public class ViewExercise extends AppCompatActivity {
         detail_image = (ImageView) findViewById(R.id.detail_image);
         btnstart_ex = (Button)findViewById(R.id.btnStart_ex);
 
-        FirebaseAuth fAuth = FirebaseAuth.getInstance();
-        FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
 
         DocumentReference documentReference = fStore.collection("users").document(userID);

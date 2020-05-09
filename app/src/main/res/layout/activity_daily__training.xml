@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="5"
+            android:textAlignment="center"
             android:textSize="50sp"
             android:textStyle="bold" />
 
@@ -97,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/btnStart_ex"
         android:layout_centerHorizontal="true"
-        android:text="20"
+        android:text=""
         android:textColor="@color/font_black"
         android:textSize="50sp"
         android:textStyle="bold" />
