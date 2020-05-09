@@ -4,62 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cofit19.ListExercise"
-    android:theme="@style/MyMaterialTheme">
+    android:theme="@style/MyMaterialTheme"
+    tools:context="com.example.cofit19.ListExercise">
 
     <TextView
         android:id="@+id/title"
-        android:text="Name of Exercise"
-        android:textColor="@color/font_black"
-        android:textSize="24sp"
-        android:gravity="center_vertical|center_horizontal"
-        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:background="@color/colorAccent"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Name of Exercise"
+        android:textColor="#fff"
+        android:textSize="24sp" />
 
     <ImageView
-        android:layout_width="360dp"
-        android:src="@drawable/cofitsplash"
-        android:layout_height="200dp"
         android:id="@+id/detail_image"
-        android:layout_centerInParent="true"/>
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/cofitsplash" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="8dp"
         android:id="@+id/btnStart_ex"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="4dp"
+        android:layout_marginBottom="13dp"
+        android:text="Start"
         android:textAlignment="center"
-        android:text="START"
-        android:textColor="@color/colorAccent"
-        app:cornerRadius="2dp"
-        app:shadowColor="@color/colorAccent"
-        app:shadowEnabled="true"
-        app:shadowHeight="2dp" />
+        android:textColor="@color/colorPrimaryDark"
+        app:backgroundTint="#fff"
+        app:strokeColor="@color/colorAccent"
+        app:strokeWidth="1pt" />
 
     <TextView
         android:id="@+id/type"
-        android:text="Kategori"
-        android:textStyle="bold"
-        android:textColor="@color/font_black"
-        android:textSize="50sp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/timer"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="527dp"
+        android:text="Kategori"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnStart_ex"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
         android:text="20"
-        android:textStyle="bold"
         android:textColor="@color/font_black"
         android:textSize="50sp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/btnStart_ex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textStyle="bold" />
 
 </RelativeLayout>

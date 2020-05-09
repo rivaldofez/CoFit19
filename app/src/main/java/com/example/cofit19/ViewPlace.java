@@ -43,7 +43,6 @@ public class ViewPlace extends AppCompatActivity {
         place_name = (TextView) findViewById(R.id.place_name);
         opening_hours = (TextView) findViewById(R.id.place_open_hour);
         btnViewOnMap = (Button) findViewById(R.id.btn_show_map);
-        btnViewDirections = (Button) findViewById(R.id.btn_view_directions);
 
         //Empty All view
         place_name.setText("");

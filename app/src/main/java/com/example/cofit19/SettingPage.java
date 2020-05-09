@@ -26,6 +26,8 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SettingPage extends AppCompatActivity {
 
@@ -123,11 +125,21 @@ public class SettingPage extends AppCompatActivity {
     private void saveWorkoutMode() {
         int selectedID = rdiGroup.getCheckedRadioButtonId();
         if(selectedID == rdiEasy.getId())
-            exerciseDB.saveSettingMode(0);
+            saveSettingMode(0);
         else if(selectedID == rdiMedium.getId())
-            exerciseDB.saveSettingMode(1);
+            saveSettingMode(1);
         else if(selectedID == rdiHard.getId())
-            exerciseDB.saveSettingMode(2);
+            saveSettingMode(2);
+    }
+
+    public void saveSettingMode(int value){
+        FirebaseAuth fAuth = FirebaseAuth.getInstance();
+        FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+        String userID = fAuth.getCurrentUser().getUid();
+        DocumentReference documentReference = fStore.collection("users").document(userID);
+        Map<String,Object> user = new HashMap<>();
+        user.put("mode",String.valueOf(value));
+        documentReference.update(user);
     }
 
 }

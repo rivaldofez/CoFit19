@@ -21,11 +21,20 @@ public class MainExercise extends AppCompatActivity {
         btnExercise = (Button) findViewById(R.id.btnExercise);
         btnSetting = (Button) findViewById(R.id.btnSetting);
         btnTraining = (ImageView) findViewById(R.id.btnTraining);
+        btnCalendar = (Button) findViewById(R.id.btnCalendar);
 
         btnTraining.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainExercise.this,Daily_Training.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainExercise.this,Calendar.class);
                 startActivity(intent);
             }
         });

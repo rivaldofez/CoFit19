@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.cofit19.Model.Exercise;
 import com.example.cofit19.Utils.Commons;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -24,7 +26,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
@@ -77,7 +81,7 @@ public class Daily_Training extends AppCompatActivity {
 
         ex_image = (ImageView) findViewById(R.id.detail_image);
         txtCountDown = (TextView)findViewById(R.id.txtCountDown);
-        txtGetReady = (TextView) findViewById(R.id.txtCountDown);
+        txtGetReady = (TextView) findViewById(R.id.txtGetReady);
         txtTimer = (TextView) findViewById(R.id.timer);
         ex_name = (TextView) findViewById(R.id.title);
 
@@ -106,13 +110,31 @@ public class Daily_Training extends AppCompatActivity {
 
                     if(ex_id < list.size()){
                         showRestTime();
+                        ex_id++;
+                        progressBar.setProgress(ex_id);
+                        txtTimer.setText("");
+                    }else{
+                        showFinished();
                     }
 
+
                 }else{
-                    showFinished();
-                    ex_id++;
-                    progressBar.setProgress(ex_id);
-                    txtTimer.setText("");
+
+                    if(type.getText().toString().equals("Pemula")){
+                        exercisesEasyModeCountDown.cancel();
+                    }else if(type.getText().toString().equals("Menengah")){
+                        exercisesMediumModeCountDown.cancel();
+                    }else if(type.getText().toString().equals("Sulit")){
+                        exercisesHardModeCountDown.cancel();
+                    }
+
+                    restTimeCountDown.cancel();
+
+                    if(ex_id<list.size())
+                        setExerciseInformation(ex_id);
+                    else
+                        showFinished();
+
                 }
             }
         });
@@ -181,13 +203,14 @@ public class Daily_Training extends AppCompatActivity {
         btnStart.setVisibility(View.INVISIBLE);
         txtTimer.setVisibility(View.INVISIBLE);
         layoutGetReady.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.INVISIBLE);
 
         txtGetReady.setText("Finished");
         txtCountDown.setText("Congratulation !\nYoure Done with today exercise");
         txtCountDown.setTextSize(20);
 
         //Save Workout done
-        Calendar.getInstance().getTimeInMillis();
+        saveDay(""+Calendar.getInstance().getTimeInMillis());
     }
 
     //Countdown
@@ -199,12 +222,14 @@ public class Daily_Training extends AppCompatActivity {
 
         @Override
         public void onFinish() {
-            if(ex_id<list.size()){
+            if(ex_id<list.size()-1){
                 ex_id++;
                 progressBar.setProgress(ex_id);
 
                 setExerciseInformation(ex_id);
                 btnStart.setText("Start");
+            }else{
+                showFinished();
             }
         }
     };
@@ -216,12 +241,14 @@ public class Daily_Training extends AppCompatActivity {
 
         @Override
         public void onFinish() {
-            if(ex_id<list.size()){
+            if(ex_id<list.size()-1){
                 ex_id++;
                 progressBar.setProgress(ex_id);
 
                 setExerciseInformation(ex_id);
                 btnStart.setText("Start");
+            }else{
+                showFinished();
             }
         }
     };
@@ -233,16 +260,17 @@ public class Daily_Training extends AppCompatActivity {
 
         @Override
         public void onFinish() {
-            if(ex_id<list.size()){
+            if(ex_id<list.size()-1){
                 ex_id++;
                 progressBar.setProgress(ex_id);
 
                 setExerciseInformation(ex_id);
                 btnStart.setText("Start");
+            }else{
+                showFinished();
             }
         }
     };
-
 
     CountDownTimer restTimeCountDown = new CountDownTimer(10000,1000) {
         @Override
@@ -272,13 +300,26 @@ public class Daily_Training extends AppCompatActivity {
 
     private void initData() {
 
-        list.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        list.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        list.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        list.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        list.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        list.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        list.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        list.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
+        list.add(new Exercise(R.drawable.jumpingjacks,"Jumping Jacks"));
+        list.add(new Exercise(R.drawable.tricep_dip,"Tricep Dips"));
+        list.add(new Exercise(R.drawable.wall_push,"Wall Push-Ups"));
+        list.add(new Exercise(R.drawable.stepuponto,"Step Up Onto Chair"));
+        list.add(new Exercise(R.drawable.squats,"Squats"));
+        list.add(new Exercise(R.drawable.push_up,"Push Up"));
+        list.add(new Exercise(R.drawable.plank,"Plank"));
+        list.add(new Exercise(R.drawable.mountain,"Mountain Climber"));
+        list.add(new Exercise(R.drawable.bird_dog,"Bird Dog"));
+        list.add(new Exercise(R.drawable.bird_dog,"Abdominal Crunches"));
+    }
+
+    public void saveDay(String Value){
+            FirebaseAuth fAuth = FirebaseAuth.getInstance();
+            FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+            String userID = fAuth.getCurrentUser().getUid();
+            DocumentReference dailyReference = fStore.collection("/users/"+userID+"/exercises").document(Value);
+
+            Map<String,Object> daily = new HashMap<>();
+            daily.put("days",Value);
+            dailyReference.set(daily);
     }
 }

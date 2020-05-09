@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +36,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
     MenuItem profil_name;
     MenuItem phone;
     MenuItem email;
+    ImageView dExercise, dStopwatch, dNearby;
 
 
     @Override
@@ -45,13 +47,16 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar2);
+        dExercise = findViewById(R.id.img_exercise);
+        dStopwatch = findViewById(R.id.img_stopwatch);
+        dNearby = findViewById(R.id.img_nearby);
 
 
         //Toolbar ke action bar
         setSupportActionBar(toolbar);
 
         navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -75,35 +80,60 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
             }
         });
 
+        dExercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent exercise_intent = new Intent(Dashboard.this, MainExercise.class);
+                startActivity(exercise_intent);
+            }
+        });
+
+        dNearby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nearby_intent = new Intent(Dashboard.this, Nearby.class);
+                startActivity(nearby_intent);
+            }
+        });
+
+        dStopwatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent stopwatch_intent = new Intent(Dashboard.this, Stopwatch.class);
+                startActivity(stopwatch_intent);
+            }
+        });
+
     }
 
     @Override
     public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }else{
+        } else {
             super.onBackPressed();
         }
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item)
-    {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_home:
                 break;
             case R.id.nav_nearby:
-                Intent nearby_intent = new Intent(Dashboard.this,Nearby.class);
+                Intent nearby_intent = new Intent(Dashboard.this, Nearby.class);
                 startActivity(nearby_intent);
                 break;
             case R.id.nav_stopwatch:
-                Intent stopwatch_intent = new Intent(Dashboard.this,Stopwatch.class);
+                Intent stopwatch_intent = new Intent(Dashboard.this, Stopwatch.class);
                 startActivity(stopwatch_intent);
                 break;
             case R.id.nav_exercise:
+                Intent exercise_intent = new Intent(Dashboard.this, MainExercise.class);
+                startActivity(exercise_intent);
                 break;
-            case R.id.nav_logout :
+            case R.id.nav_logout:
                 logout_account();
                 break;
         }
@@ -112,7 +142,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
 
     public void logout_account() {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
+        startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }
 }

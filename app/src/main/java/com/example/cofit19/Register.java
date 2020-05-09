@@ -90,6 +90,8 @@ public class Register extends AppCompatActivity {
 
                             userID = fAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fStore.collection("users").document(userID);
+                            Map<String,Object> daily = new HashMap<>();
+                            daily.put("days","cobaa");
                             Map<String,Object> user = new HashMap<>();
                             user.put("fname",fullName);
                             user.put("email",email);
@@ -102,7 +104,7 @@ public class Register extends AppCompatActivity {
                                 }
                             });
 
-                            startActivity(new Intent(getApplicationContext(),MainExercise.class));
+                            startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         }else{
                             Toast.makeText(Register.this,"Error Occured !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);

@@ -25,7 +25,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Daily_Training"></activity>
+        <activity android:name=".Calendar"></activity>
+        <activity android:name=".Daily_Training" />
         <activity android:name=".SettingPage" />
         <activity android:name=".ViewExercise" />
         <activity android:name=".ListExercise" />
@@ -53,9 +54,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ViewDirections"
-            android:label="@string/title_activity_view_directions" />
         <activity android:name=".ViewPlace" />
         <activity android:name=".Dashboard">
             <intent-filter>

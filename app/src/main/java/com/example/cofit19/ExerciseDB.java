@@ -23,15 +23,7 @@ import java.util.Map;
 public class ExerciseDB {
     int modes;
 
-    public void saveSettingMode(int value){
-        FirebaseAuth fAuth = FirebaseAuth.getInstance();
-        FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-        String userID = fAuth.getCurrentUser().getUid();
-        DocumentReference documentReference = fStore.collection("users").document(userID);
-        Map<String,Object> user = new HashMap<>();
-        user.put("mode",String.valueOf(value));
-        documentReference.update(user);
-    }
+
 
     public List<String> getWorkoutDays(){
         return null;

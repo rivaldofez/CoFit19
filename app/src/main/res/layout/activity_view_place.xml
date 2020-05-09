@@ -7,8 +7,25 @@
     tools:context="com.example.cofit19.ViewPlace">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="39dp"
+            android:layout_marginEnd="100dp"
+            android:text="Detail Place"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="36sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,18 +77,11 @@
 
                 <Button
                     android:id="@+id/btn_show_map"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button_accent"
+                    android:textColor="@color/colorPrimaryDark"
                     android:text="Show On Map" />
-
-                <Button
-                    android:id="@+id/btn_view_directions"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="View Directions" />
-
 
             </LinearLayout>
 

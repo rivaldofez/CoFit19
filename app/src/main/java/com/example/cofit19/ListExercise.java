@@ -34,14 +34,15 @@ public class ListExercise extends AppCompatActivity {
     }
 
     private void initData() {
-
-        exerciseList.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        exerciseList.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        exerciseList.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        exerciseList.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        exerciseList.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        exerciseList.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        exerciseList.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
-        exerciseList.add(new Exercise(R.drawable.logo_log_reg,"Easy Pose"));
+        exerciseList.add(new Exercise(R.drawable.jumpingjacks,"Jumping Jacks"));
+        exerciseList.add(new Exercise(R.drawable.tricep_dip,"Tricep Dips"));
+        exerciseList.add(new Exercise(R.drawable.wall_push,"Wall Push-Ups"));
+        exerciseList.add(new Exercise(R.drawable.stepuponto,"Step Up Onto Chair"));
+        exerciseList.add(new Exercise(R.drawable.squats,"Squats"));
+        exerciseList.add(new Exercise(R.drawable.push_up,"Push Up"));
+        exerciseList.add(new Exercise(R.drawable.plank,"Plank"));
+        exerciseList.add(new Exercise(R.drawable.mountain,"Mountain Climber"));
+        exerciseList.add(new Exercise(R.drawable.bird_dog,"Bird Dog"));
+        exerciseList.add(new Exercise(R.drawable.bird_dog,"Abdominal Crunches"));
     }
 }
