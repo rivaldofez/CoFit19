@@ -9,20 +9,24 @@
     android:padding="20dp">
 
     <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/cofitsplash"/>
     
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CO-FITNESS"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:fontFamily="@font/concert_one"
         android:textSize="24sp"/>
     
     <TextView
+        android:text="Health with Purpose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Health with Purpose"
+        android:textColor="#fff"
         android:textSize="14sp"/>
 
 

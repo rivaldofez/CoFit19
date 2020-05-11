@@ -57,22 +57,13 @@ public class ViewPlace extends AppCompatActivity {
             }
         });
 
-        btnViewDirections.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent mapIntent = new Intent(ViewPlace.this,ViewDirections.class);
-                startActivity(mapIntent);
-            }
-        });
-
-
 
         photo = findViewById(R.id.photo);
         if(Common.currentResult.getPhotos() != null && Common.currentResult.getPhotos().length>0){
             Picasso.with(this)
                     .load(getPhotoOfPlace(Common.currentResult.getPhotos()[0].getPhoto_reference(),1000))
                     .placeholder(R.drawable.ic_image_black_24dp)
-                    .error(R.drawable.ic_error_black_24dp)
+                    .error(R.drawable.error)
                     .into(photo);
         }
 

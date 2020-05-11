@@ -88,7 +88,7 @@ public class SettingPage extends AppCompatActivity {
             public void onClick(View v) {
                 saveWorkoutMode();
                 saveAlarm(switchAlarm.isChecked());
-                Toast.makeText(SettingPage.this,"SAVED",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingPage.this,"Berhasil Menyimpan",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

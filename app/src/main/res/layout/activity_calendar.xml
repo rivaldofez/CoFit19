@@ -35,12 +35,15 @@
         app:layout_constraintVertical_bias="0.07999998" />
 
     <LinearLayout
-        android:layout_below="@id/calendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/calendar"
         android:layout_margin="16dp"
+        android:layout_marginBottom="695dp"
         android:orientation="horizontal"
-        android:weightSum="10">
+        android:weightSum="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp">
 
         <ImageView
             android:layout_width="0dp"

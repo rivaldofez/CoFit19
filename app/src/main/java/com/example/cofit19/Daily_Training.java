@@ -156,7 +156,7 @@ public class Daily_Training extends AppCompatActivity {
     private void showGetReady() {
         ex_image.setVisibility(View.INVISIBLE);
         btnStart.setVisibility(View.INVISIBLE);
-        txtTimer.setVisibility(View.VISIBLE);
+
 
         layoutGetReady.setVisibility(View.VISIBLE);
 
@@ -170,6 +170,7 @@ public class Daily_Training extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                txtTimer.setVisibility(View.VISIBLE);
                 showExercises();
             }
         }.start();
@@ -227,6 +228,7 @@ public class Daily_Training extends AppCompatActivity {
                 progressBar.setProgress(ex_id);
 
                 setExerciseInformation(ex_id);
+                txtTimer.setVisibility(View.INVISIBLE);
                 btnStart.setText("Start");
             }else{
                 showFinished();
