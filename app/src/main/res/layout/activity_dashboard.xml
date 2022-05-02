@@ -94,6 +94,7 @@
                             android:layout_below="@id/img_exercise"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Exercise"
                             android:textColor="#000000"
                             android:textSize="24sp" />
@@ -141,6 +142,7 @@
                             android:layout_below="@id/img_stopwatch"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Stopwatch"
                             android:textColor="#000000"
                             android:textSize="24sp" />
@@ -187,6 +189,7 @@
                             android:layout_below="@id/img_nearby"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Nearby"
                             android:textColor="#000000"
                             android:textSize="24sp" />
